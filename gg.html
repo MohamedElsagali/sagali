@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>واعي</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.5s, color 0.5s;
+    }
+
+    :root {
+      --main-color: #4b0082;
+      --background-light: #f4f4f4;
+      --background-dark: #121212;
+      --text-dark: #000;
+      --text-light: #fff;
+    }
+
+    body.light {
+      background: var(--background-light);
+      color: var(--text-dark);
+    }
+
+    body.dark {
+      background: var(--background-dark);
+      color: var(--text-light);
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: var(--main-color);
+      color: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover,
+    .sidebar a.active {
+      background: #36005e;
+    }
+
+    .main {
+      flex-grow: 1;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .button {
+      background: var(--main-color);
+      color: #fff;
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #36005e;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .theme-switch-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .theme-switch {
+      display: inline-block;
+      height: 34px;
+      position: relative;
+      width: 60px;
+    }
+
+    .theme-switch input {
+      display: none;
+    }
+
+    .slider {
+      background-color: #ccc;
+      bottom: 0;
+      cursor: pointer;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      background-color: white;
+      bottom: 4px;
+      content: "";
+      height: 26px;
+      left: 4px;
+      position: absolute;
+      transition: 0.4s;
+      width: 26px;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #222;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .social a {
+      margin-right: 10px;
+      color: inherit;
+    }
+
+    /* شاشة الترحيب */
+    .splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      z-index: 1000;
+      animation: fadeOut 2s forwards 2s;
+    }
+
+    .splash .left,
+    .splash .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .splash .left {
+      background-color: #ffffff;
+      color: #4b0082;
+    }
+
+    .splash .right {
+      background-color: #4b0082;
+      color: #ffffff;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body class="light">
+  <!-- شاشة ترحيب "واعي" -->
+  <div class="splash">
+    <div class="left">واعي</div>
+    <div class="right">Wa3y</div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Wa3y-واعي</h2>
+      <a href="#" class="nav-link active" data-target="home">الصفحة الرئيسية</a>
+      <a href="#" class="nav-link" data-target="materials">المواد الدراسية</a>
+    </div>
+    <div class="main">
+      <div class="header">
+        <div class="logo"></div>
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div id="home" class="section active">
+        <h2>البيانات الشخصية</h2>
+        <p><strong>المهندس</strong> محمد الصقالي</p>
+        <p><strong>رقم الهاتف:</strong> 0915157221</p>
+        <div class="social">
+          <p><strong>فيسبوك:</strong> <a href="https://www.facebook.com/share/1NokJ5Ew1D/" target="_blank">Mohammed Skali </a></p>
+          <p><strong>تليجرام:</strong> <a href="https://t.me/Mohammedskali" target="_blank">القناة العامه </a></p>
+       
+     
+      <h5>من أنا؟</h5>
+      <pre><b>
+        أنا [محمد الصقالي]، مهندس/طالب هندسة متخصّص في [الهندسة الكهربائية]، 
+        أُقدّم شروحات مبسطة ودروساً مُنظمة للطلبة في مختلف المواد العلمية،
+         خصوصاً الرياضيات، الفيزياء، أؤمن بأن الفهم الحقيقي للمعلومة يبدأ من شرح سلس وواضح،
+         لذلك أحرص على استخدام أساليب شرح تفاعلية تُناسب جميع المستويات وتُسهّل على الطالب الاستيعاب والمتابعة.
+
+      </b>
+      </pre>
+      <h5>• رسالتي: </h5>
+      <pre><b>
+        هدفي هو أن أكون عوناً لكل طالب يجد صعوبة في الفهم،
+         وأن أفتح له الطريق ليُحب المادة ويتفوّق فيها.
+         التعليم رسالة، وأنا أقدّمها بأسلوبي الخاص المبني على الوضوح، البساطة، والصدق في إيصال المعلومة.
+      </b></pre>
+      <h5>_ ماذا أقدّم؟</h5>
+      <pre><b>
+        • دروس أونلاين
+
+        • مراجعات واختبارات قبل الامتحانات
+
+        • شروحات مخصصة حسب مستوى الطالب
+
+        • متابعة مستمرة وتقديم نصائح دراسية
+
+<p>
+إذا كنت تبحث عن شخص يشرحلك المادة وكأنك تدرسها لأول مرة بشكل سهل وممتع، فأنت في المكان الصحيح.
+</p>  
+
+      </b></pre>
+    </div>
+  </div>
+      <div id="materials" class="section">
+        <h2>المواد الدراسية</h2>
+        <h3>السنة الأولى ثانوي</h3>
+        <button class="button" onclick="window.open('https://t.me/mathmohammedskali')">رياضيات</button>
+        <button class="button" onclick="window.open('https://t.me/mohammedphys')">فيزياء</button>
+        <h3>السنة الثانية ثانوي</h3>
+        <button class="button" onclick="window.open('https://t.me/eng_MohammedSkali')">رياضيات</button>
+        <button class="button" onclick="window.open('https://t.me/mohammedPhysi')">فيزياء</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+        const target = link.dataset.target;
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === target) {
+            section.classList.add('active');
+          }
+        });
+      });
+    });
+
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('change', () => {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+    });
+  </script>
+</body>
+</html>
